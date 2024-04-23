@@ -274,8 +274,6 @@ def interpret_results(csv_file, current_version, test_name=None):
             stable_releases.append(current_version)
             send_slack_message(f"✅Release is stable. \n`Version={current_version}` \n `{aggregate_metrics}`")
 
-            # queue a new stable release on github
-            github_helper.new_stable_release(version=current_version)
         save_stable_releases(stable_releases)
         save_unstable_releases(unstable_releases)
         return results
@@ -283,7 +281,7 @@ def interpret_results(csv_file, current_version, test_name=None):
 
 if __name__ == "__main__":
     print("interpreting load test results")
-    version = get_current_litellm_version()
+    version = "ZEFR_LOAD_TEST"
     print("current litellm version", version)
     if len(sys.argv) < 2:
         print("Usage: python3 interpret_load_test.py <test_name>")
