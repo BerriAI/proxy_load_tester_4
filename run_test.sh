@@ -3,7 +3,7 @@
 # Function to run Locust test
 
 function run_cache_off_locust_test() {
-    locust -f no_cache.py --headless -u 20 -r 20 -H https://litellm-main-latest.onrender.com/  -t 100 --csv load_test
+    locust -f no_cache.py --headless -u 20 -r 20 -H https://litellm-main-v1-35-19.onrender.com/  -t 100 --csv load_test
 }
 
 
